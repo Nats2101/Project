@@ -5,21 +5,27 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   
+  <context-param>
+  <param-name>contextConfigLocation</param-name> 
+  		<!--location of dispatcher serv  -->
+  <param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
+  </context-param>
+  
+  <listener>
+   <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>    
+   		<!-- load ds.xml, create handler -->
+  </listener>
+  
   <servlet>
-  <servlet-name>dispatcher</servlet-name>
+   <servlet-name>dispatcher</servlet-name>
   <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-  <load-on-startup>1</load-on-startup>      
+  <load-on-startup>1</load-on-startup>       
+  		<!--whenever you start server you can specify how many instances can be created.   -->
   </servlet>
+  
   <servlet-mapping>
   <servlet-name>dispatcher</servlet-name>
   <url-pattern>/</url-pattern>
   </servlet-mapping>
-  <context-param>
-  <param-name>contextConfigLocation</param-name>
-  <param-value>/WEB/INF/dispatcher-servlet.xml</param-value>
-  </context-param>
   
-  <listener>
-  <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>    
-  </listener>
 </web-app>
