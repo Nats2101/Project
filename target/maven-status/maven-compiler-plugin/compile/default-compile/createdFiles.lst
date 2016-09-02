@@ -1,2 +1,5 @@
-com\niit\ShopCart\App.class
-com\niit\ShopCart\Category.class
+com\ecom\pickabook\dao\ProductDAOImpl.class
+com\ecom\pickabook\controller\ViewController.class
+com\ecom\pickabook\dao\ProductDAO.class
+com\ecom\pickabook\services\ProductServices.class
+com\ecom\pickabook\model\Product.class

@@ -1,0 +1,33 @@
+ p
+{
+padding:10px 10px 10px 10px ;
+}
+input
+{
+	padding:10px 10px 10px 10px;
+	border-style:solid;
+	border-width:2px;
+	border-color:#333;
+	width:300px;
+	border-radius:20px;
+}
+.button
+{
+	background-color:#333;
+	color:white;
+	border-width:3px;
+	border-radius:50px;
+	width:100px;
+}
+form.F1
+{
+	border-style:solid;
+	background-color:#f9f9f9;
+	width:500px;
+	border-radius:20px;
+	border-color:#f1f1f1;	
+	text-align:center;
+	margin-top:120px;
+		padding:10px 10px 10px 10px;
+
+}
