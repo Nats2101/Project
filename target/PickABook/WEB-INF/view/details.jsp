@@ -30,9 +30,10 @@
 </div>
 <div class="container text-center" ng-app="myApp" ng-controller="myCtrl">
   <h2>ALL PRODUCTS</h2>
-<div  ng-repeat="product in Data" >
+
+<div ng-repeat="product in Data | filter: { id: '${param.id}'}" >
 <center>
-<img src="<c:url value='/resources/Images/{{product.category}}/{{product.image}}'/>" height="300px" width="300px" />
+<img src="<c:url value='/resource/image/{{product.name}}.jpg'/>" height="300px" width="300px" />
 </center>
 <table class="table table-striped">
 <tr>
@@ -41,7 +42,7 @@
 </tr>
 <tr>
 	<th>Available Quantity</th>
-	<td>{{product.qty}}</td>
+	<td>{{product.quantity}}</td>
 </tr>
 <tr>
 	<th>Price</th>
@@ -58,28 +59,8 @@
 
 </table>
 </div>
-
-<div class="row">
-
-	<div class="col-sm-4">
-	<form role="form">
-	 <button type="submit" class="btn btn-default">Add to Cart</button>
-	 </form>
-	</div> 
-
-
-	<div class="col-sm-4">
-	<form role="form">
-	<button type="submit" class="btn btn-default">View Cart</button>
-	</form>
-	</div>
-	<div class="col-sm-4">
-	<form role="form">
-		<button type="submit" class="btn btn-default">Back to Home</button>
-	</form>
-	</div>
 </div>
-</div>
+
 <div>
 <%@ include file = "Footer.jsp"%>
 </div>

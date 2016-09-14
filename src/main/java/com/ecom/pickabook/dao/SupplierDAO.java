@@ -10,13 +10,13 @@ import com.ecom.pickabook.model.Supplier;
 @Repository
 public interface SupplierDAO {
 
-	public boolean save(Supplier supplier);
+	public boolean saveSupplier(Supplier supplier);
 	
-	public boolean update(Supplier supplier);
+	public boolean updateSupplier(Supplier supplier);
 	
-	public void delete(Integer id);
+	public boolean deleteSupplier(Supplier supplier);
 	
-	public Supplier getById(int id);
+	public Supplier getSupplierById(int id);
 	
-	public List<Supplier> list();
+	public List<Supplier> listSupplier();
 }

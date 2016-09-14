@@ -1,16 +1,19 @@
   h2{
-  margin-top:140px;
+  margin-top:160px;
   margin-bottom:15px;
   font: bold;
   font-size:50px;
   font-family:Bradley Hand ITC;
         src: url(fonts/Bradley Hand ITC.ttf);
   }
-
  p.head
 {
-font-size:40px;
+font-size:50px;
+padding-left: 0px;
+z-index: 100;
+color:white;
 }
+
 .navbar-brand
 {
 height:50px;
@@ -22,7 +25,9 @@ border-radius:20px;
 {
 padding-top:80px;
 background-color:#292c2f;
+border:none;
 }
+
   img
   {
   padding:5px;
@@ -38,4 +43,8 @@ box-shadow: 10px 10px 10px #ccc;
 	background-color: white;
 	border:2px solid #f1f1f1;
 	padding: 10px;
+}
+li
+{
+	font: normal 25px 'Cookie';
 }

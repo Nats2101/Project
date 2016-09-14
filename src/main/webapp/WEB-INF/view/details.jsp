@@ -6,6 +6,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+       <link href="http://fonts.googleapis.com/css?family=Neucha" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -30,9 +31,10 @@
 </div>
 <div class="container text-center" ng-app="myApp" ng-controller="myCtrl">
   <h2>ALL PRODUCTS</h2>
-<div  ng-repeat="product in Data" >
+
+<div ng-repeat="product in Data | filter: { id: '${param.id}'}" >
 <center>
-<img src="<c:url value='/resources/Images/{{product.category}}/{{product.image}}'/>" height="300px" width="300px" />
+<img src="<c:url value='/resource/image/{{product.name}}.jpg'/>" height="300px" width="300px" />
 </center>
 <table class="table table-striped">
 <tr>
@@ -58,28 +60,8 @@
 
 </table>
 </div>
-
-<div class="row">
-
-	<div class="col-sm-4">
-	<form role="form">
-	 <button type="submit" class="btn btn-default">Add to Cart</button>
-	 </form>
-	</div> 
-
-
-	<div class="col-sm-4">
-	<form role="form">
-	<button type="submit" class="btn btn-default">View Cart</button>
-	</form>
-	</div>
-	<div class="col-sm-4">
-	<form role="form">
-		<button type="submit" class="btn btn-default">Back to Home</button>
-	</form>
-	</div>
 </div>
-</div>
+
 <div>
 <%@ include file = "Footer.jsp"%>
 </div>

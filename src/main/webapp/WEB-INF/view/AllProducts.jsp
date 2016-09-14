@@ -6,6 +6,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+       <link href="http://fonts.googleapis.com/css?family=Neucha" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -32,8 +33,10 @@
   <h2>ALL PRODUCTS</h2>
 <fieldset>
   <c:set var="pid" value="${param.id}"></c:set>
+  
  <table class="table table-striped;">
 	<tr>
+	
 	<th>Product name</th>
 	<th>Product description</th>
 	<th>Product category</th>
@@ -41,18 +44,20 @@
 	<th>Product price</th>
 	<th></th>
 	</tr>
-  <c:if test="${pid=='4'}" >
+  <c:if test="${pid=='0'}" >
+
 	<tr ng-repeat="product in Data" >
+	
  	<td>{{product.name}}</td>
 	<td>{{product.description}}</td>
 	<td>{{product.category}}</td>
 	<td>{{product.quantity}}</td>
 	<td>{{product.price}}</td>
 	<td>
-			<a href="details?id={{product.id}}" >View</a>
-			 <sec:authorize access="hasRole('ROLE_ADMIN')">|
-			<a href="EditProducts?id={{product.id}}" >Edit</a>|
-			<a href="delete/{{product.id}}" >Delete</a>
+			<a href="details?id={{product.id}}" >  <button type="button" class="btn btn-primary">View</button></a>
+			 <sec:authorize access="hasRole('ROLE_ADMIN')">
+			<a href="EditProducts?id={{product.id}}" >  <button type="button" class="btn btn-warning">Edit</button></a>
+			<a href="DeleteProducts?id={{product.id}}" >  <button type="button" class="btn btn-danger">Delete</button></a>
 			</sec:authorize>
 	</td>
 	</tr>
@@ -60,11 +65,11 @@
  	</c:if>
 	</table>
 </fieldset>
-
+</div>
 <div>
 <%@ include file = "Footer.jsp"%>
 </div>
-</div>
+
 
 </body>
 </html>

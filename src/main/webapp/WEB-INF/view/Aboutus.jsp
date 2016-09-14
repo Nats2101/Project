@@ -16,15 +16,7 @@
 </head>
 
   <style>
-  .carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-    	  z-index:-1;
-		   width: 50%;
-      margin: auto;
-	  position:relative;
-	  margin-top:100px;
-	  }
-	  
+  	  
  p.speech {
   position: relative;
   width: 200px;
@@ -63,10 +55,11 @@ p.speech:after {
   border: 15px solid;
   border-color: #fff transparent transparent #fff;
 }
-	  
 p.head
 {
-font-size:40px;
+font-size:45px;
+	padding-left:0px;
+	margin:0px;
 }
 .navbar-brand
 {
@@ -74,11 +67,15 @@ height:50px;
 font: normal 35px 'Cookie', cursive;
 color:white;
 border-radius:20px;
-}	  
+}
 #myNavbar
 {
 padding-top:80px;
 background-color:#292c2f;
+}
+a
+{
+	font: normal 25px 'Cookie', cursive;
 }
 
   </style>

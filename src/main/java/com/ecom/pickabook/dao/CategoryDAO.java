@@ -6,17 +6,16 @@ import org.springframework.stereotype.Repository;
 
 import com.ecom.pickabook.model.Category;
 
-
 @Repository
 public interface CategoryDAO {
 
-	public boolean save(Category category);
+	public boolean saveCategory(Category category);
 	
-	public boolean update(Category category);
+	public boolean updateCategory(Category category);
 	
-	public void delete(Integer id);
+	public boolean deleteCategory(Category category);
 	
-	public Category getById(int id);
+	public Category getCategoryById(int id);
 	
-	public List<Category> list();
+	public List<Category> listCategory();
 }

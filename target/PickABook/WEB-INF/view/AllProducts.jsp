@@ -32,8 +32,10 @@
   <h2>ALL PRODUCTS</h2>
 <fieldset>
   <c:set var="pid" value="${param.id}"></c:set>
+  
  <table class="table table-striped;">
 	<tr>
+	
 	<th>Product name</th>
 	<th>Product description</th>
 	<th>Product category</th>
@@ -41,18 +43,20 @@
 	<th>Product price</th>
 	<th></th>
 	</tr>
-  <c:if test="${pid=='4'}" >
+  <c:if test="${pid=='0'}" >
+
 	<tr ng-repeat="product in Data" >
+	
  	<td>{{product.name}}</td>
 	<td>{{product.description}}</td>
 	<td>{{product.category}}</td>
 	<td>{{product.quantity}}</td>
 	<td>{{product.price}}</td>
 	<td>
-			<a href="details?id={{product.pid}}" >View</a>
-			 <sec:authorize access="hasRole('ROLE_ADMIN')">|
-			<a href="EditProducts?id={{product.pid}}" >Edit</a>|
-			<a href="DelProducts?id={{product.pid}}" >Delete</a>
+			<a href="details?id={{product.id}}" >  <button type="button" class="btn btn-primary">View</button></a>
+			 <sec:authorize access="hasRole('ROLE_ADMIN')">
+			<a href="EditProducts?id={{product.id}}" >  <button type="button" class="btn btn-warning">Edit</button></a>
+			<a href="DeleteProducts?id={{product.id}}" >  <button type="button" class="btn btn-danger">Delete</button></a>
 			</sec:authorize>
 	</td>
 	</tr>
@@ -60,11 +64,11 @@
  	</c:if>
 	</table>
 </fieldset>
-
+</div>
 <div>
 <%@ include file = "Footer.jsp"%>
 </div>
-</div>
+
 
 </body>
 </html>

@@ -26,9 +26,9 @@
 <mvc:default-servlet-handler/>
  <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">  
         <property name="driverClassName"  value="org.h2.Driver"></property>  
-        <property name="url" value="jdbc:h2:tcp://localhost/~/db02"></property>  
+        <property name="url" value="jdbc:h2:tcp://localhost/~/db04"></property>  
         <property name="username" value="sa"></property>  
-        <property name="password" value="sa"></property>  
+        <property name="password" value=""></property>  
     </bean>
 
 <bean id="sessionFactory"
@@ -47,6 +47,8 @@
 			</props>
 		</property>
 	</bean>
+	
+	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
 	
 	<tx:annotation-driven  transaction-manager="transactionManager"/>
 	<bean id="transactionManager"

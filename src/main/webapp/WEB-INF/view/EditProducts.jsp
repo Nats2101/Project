@@ -6,6 +6,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Neucha" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -21,7 +22,12 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="<c:url value='/resource/js/angular/Pcontroller.js'/>"></script>
-
+<style>
+.errStyle {
+	color: maroon;
+	font: normal 20px 'Neucha', cursive;
+}
+</style>
 </head>
 <body>
 
@@ -33,34 +39,16 @@
 
 <h2>UPDATE PRODUCTS</h2>
 
-		<form:form modelAttribute="product" role="form" action="EditProducts">
-			<form:input style="visibility:hidden;" path="id" />
+		<form:form action="EditProducts" modelAttribute="product" method="POST" role="form">			
+		<form:input style="visibility:hidden;" path="id" />
 			<div class="form-group">
 				<form:label path="name">
 					<spring:message text="Product Name" />
 				</form:label>
 				<form:input class="form-control" path="name" />
-
-			</div>
-			<div class="form-group">
-				<form:label path="quantity">
-					<spring:message text="Quantity Available" />
-				</form:label>
-				<form:input class="form-control" path="quantity" />
-
-			</div>
-			<div class="form-group">
-				<form:label path="price">
-					<spring:message text="Product Price" />
-				</form:label>
-				<form:input class="form-control" path="price" />
-			</div>
-
-			<div class="form-group">
-				<form:label path="category">
-					<spring:message text="Category" />
-				</form:label>
-				<form:input class="form-control" path="category" />
+				<p class="errStyle">Product Name should be atleast 3 characters!
+					<form:errors path="name"></form:errors>
+				</p>
 			</div>
 
 			<div class="form-group">
@@ -68,9 +56,39 @@
 					<spring:message text="Description" />
 				</form:label>
 				<form:input class="form-control" path="description" />
-
+				<p class="errStyle">Product description should be atleast 3 characters!
+					<form:errors path="description"></form:errors>
+				</p>
 			</div>
-
+<div class="form-group">
+				<form:label path="category">
+					<spring:message text="Category" />
+				</form:label>
+				<form:input class="form-control" path="category" />
+			
+			<p class="errStyle">Product category should be atleast 3 characters!
+				<form:errors path="name"></form:errors>
+			</p>
+			</div>
+			<div class="form-group">
+				<form:label path="price">
+					<spring:message text="Product Price" />
+				</form:label>
+				<form:input class="form-control" path="price" />
+			<p class="errStyle"> Product price should be above 10
+				<form:errors path="name"></form:errors>
+			</p>
+			</div>
+			<div class="form-group">
+				<form:label path="quantity">
+					<spring:message text="Quantity Available" />
+				</form:label>
+				<form:input class="form-control" path="quantity" />
+				<p class="errStyle"> Product quantity should be atleast 1
+					<form:errors path="name"></form:errors>
+				</p>
+			</div>
+			
 			<div class="form-group">
 				<input class="btn btn-info" type="submit"
 					value="<spring:message text="Update Product"/>" />

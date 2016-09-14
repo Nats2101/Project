@@ -6,32 +6,31 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-
-import org.hibernate.validator.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
-@Table
+@Table(name="category")
 public class Category {
 	@Id
 	@Column
     @GeneratedValue(strategy = GenerationType.AUTO)    //this is for auto 
-	private String id;
-	
-	@Column(name="name")
-	@Min(5)
-	@Max(15)
+	private int id;
+	@Column
+	@NotNull
+    @Size(min=5, max=20, message="Name has to be atleast 5 to 20 alphabets!")
 	private String name;
-	
-	@NotEmpty
+	@Column
+	@NotNull
+    @Size(min=5, max=20, message="Describe some more for us please!")
 	private String description;
 		
-	public String getid() {
+	public int getId() {
 		return id;
 	}
-	public void setid(String Id) {
-		id = Id;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getName() {
 		return name;
@@ -45,5 +44,9 @@ public class Category {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+	/*public String toString()
+	{
+		return "{Product id :'"+id+"', name: '"+name+"',description: '"+description+"'}";
+		
+	}*/
 }

@@ -5,6 +5,8 @@
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
  <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+     <link href="http://fonts.googleapis.com/css?family=Neucha" rel="stylesheet" type="text/css">
+     <link href="http://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -17,25 +19,44 @@
   .carousel-inner > .item > a > img {
     	  		   width: 50%;
       margin: auto;
+      padding: auto;
 	  position:relative;
-	  margin-top:100px;
-	  
 	  }
-p.head
+	  
+ p.head
 {
-font-size:40px;
+font-size:52px;
+z-index: 100;
+color:white;
 }
+
 .navbar-brand
 {
-height:50px;
+height:52px;
 font: normal 35px 'Cookie', cursive;
 color:white;
-border-radius:20px;
+border-radius:0px;
+
 }	  
 #myNavbar
 {
 padding-top:80px;
 background-color:#292c2f;
+width:100%;
+}
+a
+{
+	font: normal 20px 'Neucha', cursive;
+}
+.welcome
+{
+	background-color:#292c2f;
+	font: normal 25px 'Neucha', cursive;
+	color:white;
+	width:100%;
+	padding-top:150px;
+	height:180px;
+	float:center;
 }
 
   </style>
@@ -44,6 +65,10 @@ background-color:#292c2f;
 <div>
 <%@ include file = "Header.jsp"%>
 </div>
+
+  <div class="welcome">
+   Welcome to Pick-A-Book, ${Role} ${username}!
+      </div>
 <div class="container">
   <br>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -93,6 +118,11 @@ background-color:#292c2f;
       <span class="sr-only">Next</span>
     </a>
   </div>
+</div>
+
+
+<div>
+<%@ include file = "category.jsp"%>
 </div>
 
 <div>

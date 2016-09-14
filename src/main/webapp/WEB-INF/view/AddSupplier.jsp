@@ -2,10 +2,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Add Products</title>
+<title>Add Supplier</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+       <link href="http://fonts.googleapis.com/css?family=Neucha" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -20,8 +21,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<script src="<c:url value='/resource/js/angular/Pcontroller.js'/>"></script>
-
+<script src="<c:url value='/resource/js/angular/Scontroller.js'/>"></script>
+<style type="text/css">
+.errStyle {
+	color: orange;
+	font: normal 20px 'Neucha';
+	text-shadow: white;
+}
+</style>
 </head>
 <body>
 
@@ -29,31 +36,22 @@
 <%@ include file = "Header.jsp"%>
 </div>
 <div class="container text-center">
-  <h2>ADD PRODUCTS</h2>
-<form:form action="AddProducts" modelAttribute="product" method="POST">
+  <h2>ADD SUPPLIER</h2>
+<form:form action="AddSupplier" modelAttribute="supplier" method="POST" role="form">
 						<div class="form-group">
-<form:label path="name"><spring:message text="Product Name"/></form:label>
-<form:input path="name"/>
+<form:label path="name"><spring:message text="Supplier Name"/></form:label>
+<form:input class="form-control" path="name"/>
+<p class="errStyle"> <form:errors path="name"></form:errors></p>
 			</div>
 			<div class="form-group">
-<form:label path="description"><spring:message text="Product description"/></form:label>
-<form:input path="description"/>
+<form:label path="address"><spring:message text="Supplier address"/></form:label>
+<form:input class="form-control" path="address"/>
+<p class="errStyle"> <form:errors path="address"></form:errors></p>
 			</div>
-			<div class="form-group">
-<form:label path="category"><spring:message text="Product category"/></form:label>
-<form:input path="category"/>
-			</div>
-			<div class="form-group">
-<form:label path="price"><spring:message text="Product price"/></form:label>
-<form:input path="price"/>
-			</div>
-			<div class="form-group">
-<form:label path="quantity"><spring:message text="Product quantity"/></form:label>
-<form:input path="quantity"/>
-			</div>
+			
 			<div class="form-group">
 				<input class="btn btn-info" type="submit"
-					value="<spring:message text="Add Product"/>" />
+					value="<spring:message text="Add Supplier"/>" />
 
 			</div>
 		</form:form>

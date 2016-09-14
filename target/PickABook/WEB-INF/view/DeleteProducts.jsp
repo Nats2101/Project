@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>All Products</title>
+<title>Delete Products</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
@@ -25,14 +25,30 @@
 </head>
 <body>
 
-<div >
+<div>
 <%@ include file = "Header.jsp"%>
 </div>
 
-<div>
-<%@ include file = "Footer.jsp"%>
+<div class="container text-center" ng-app="myApp" ng-controller="myCtrl">
+ <h2>DELETE PRODUCTS</h2>
+ <br>
+ <h3>Are you sure , you want to delete this product?</h3>
+<div class="row">
+
+<div class="col-sm-6">
+<form action="DeleteProducts" method="post" role="form">
+<input type="text" name="id" value="${param.id}" style="visibility:hidden;">
+<input type="submit" value="Confirm Delete" class="btn btn-info" />
+ </form>
+ </div>
+ 
+<div class="col-sm-6">
+<form action="AllProducts" method="get" role="form">
+<input type="submit" value="Cancel" class="btn btn-info" />
+</form>
+ </div>
+ </div>
+<%@ include file="Footer.jsp" %>
 </div>
-
-
 </body>
 </html>

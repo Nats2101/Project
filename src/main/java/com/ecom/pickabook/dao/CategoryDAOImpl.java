@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.ecom.pickabook.model.Category;
 
-
 @EnableTransactionManagement
 @Repository("CategoryDAO")
 public class CategoryDAOImpl implements CategoryDAO {
@@ -22,9 +21,8 @@ public class CategoryDAOImpl implements CategoryDAO {
 		this.sessionFactory = sessionFactory;
 	}
 
-	
 	@Transactional
-	public boolean save(Category category) {
+	public boolean saveCategory(Category category) {
 		try {
 			sessionFactory.getCurrentSession().save(category);
 			return true;
@@ -34,7 +32,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		}
 	}
 	@Transactional
-	public boolean update(Category category) {
+	public boolean updateCategory(Category category) {
 		try {
 			sessionFactory.getCurrentSession().update(category);
 			return true;
@@ -44,14 +42,17 @@ public class CategoryDAOImpl implements CategoryDAO {
 		}
 	}
 	@Transactional
-	public void delete(Integer id) {
-		 Category c = (Category) sessionFactory.getCurrentSession().load(Category.class, id);
-	        if (null != c) {
-	            sessionFactory.getCurrentSession().delete(c);
-	        }
+	public boolean deleteCategory(Category category) {
+		try {
+			sessionFactory.getCurrentSession().delete(category);
+			return true;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return false;
+		}
 	}
 	@Transactional
-	public Category getById(int id) {
+	public Category getCategoryById(int id) {
 		String hql = "from Category where id = " + "'" + id + "'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		List<Category> list = query.list();
@@ -63,8 +64,8 @@ public class CategoryDAOImpl implements CategoryDAO {
 	}
 
 	@Transactional
-	public List<Category> list() {
-		String hql = "from Product";
+	public List<Category> listCategory() {
+		String hql = "from Category";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		return query.list();
 	}

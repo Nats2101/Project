@@ -242,7 +242,7 @@
 		</div>
   </div>
 </div>
-
+</div>
 <div>
 <%@ include file = "Footer.jsp"%>
 </div>

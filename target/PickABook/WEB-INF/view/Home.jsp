@@ -17,25 +17,39 @@
   .carousel-inner > .item > a > img {
     	  		   width: 50%;
       margin: auto;
+      padding: auto;
 	  position:relative;
-	  margin-top:100px;
-	  
 	  }
 p.head
 {
 font-size:40px;
+	padding-left:0px;
+	margin:0px;
+	z-index: 100;
 }
 .navbar-brand
 {
-height:50px;
+height:40px;
 font: normal 35px 'Cookie', cursive;
 color:white;
 border-radius:20px;
-}	  
+}
 #myNavbar
 {
 padding-top:80px;
 background-color:#292c2f;
+}
+a
+{
+	font: normal 25px 'Cookie', cursive;
+}
+.welcome
+{
+	background-color:#292c2f;
+	font: normal 25px 'Cookie', cursive;
+	color:white;
+	width:100%;
+	padding-top:140px;
 }
 
   </style>
@@ -44,6 +58,11 @@ background-color:#292c2f;
 <div>
 <%@ include file = "Header.jsp"%>
 </div>
+
+  <div class="welcome"><marquee>
+   Welcome ${Role} ${username}
+  </marquee>
+      </div>
 <div class="container">
   <br>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -93,6 +112,11 @@ background-color:#292c2f;
       <span class="sr-only">Next</span>
     </a>
   </div>
+</div>
+
+
+<div>
+<%@ include file = "category.jsp"%>
 </div>
 
 <div>

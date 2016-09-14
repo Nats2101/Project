@@ -1,6 +1,5 @@
 package com.ecom.pickabook.model;
 
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,29 +7,43 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table
 public class User {
+	
+	private  boolean enabled=true;
 	@Id
 	@Column
     @GeneratedValue(strategy = GenerationType.AUTO)    //this is for auto 
 	private int id;  
 	@Column
+    @Size(min=4, max=10, message="Name has to be atleast 4 to 10 alphabets!")
 	private String fname;
 	@Column
+    @Size(min=4, max=10, message="Name has to be atleast 4 to 10 alphabets!")
 	private String lname;  
 	@Column
-	private Date bdate;  
+	private String bdate;  
 	@Column
+	@Size(min=10,max=10,message="10 digit number required!")
 	private String contact;  
 	@Column
+	@Size(min=5, max=30, message="We need the complete address please!")
 	private String address;  
 	@Column
+	@Email(message="Check your email id again!")
 	private String email;  
 	@Column
+	@NotNull(message="This field cannot be empty!")
 	private String Uname;  
 	@Column
+	@Size(min=4, message="Min 4 alphanumeric characters")
 	private String password;
 	public int getId() {
 		return id;
@@ -50,10 +63,10 @@ public class User {
 	public void setLname(String lname) {
 		this.lname = lname;
 	}
-	public Date getBdate() {
+	public String getBdate() {
 		return bdate;
 	}
-	public void setBdate(Date bdate) {
+	public void setBdate(String bdate) {
 		this.bdate = bdate;
 	}
 	public String getContact() {
@@ -85,6 +98,12 @@ public class User {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public boolean isEnabled() {
+		return enabled;
+	}
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}  
 	
 }
