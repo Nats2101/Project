@@ -84,6 +84,7 @@ public class ViewController {
 		return new ModelAndView("AddProducts","product",new Product());
 	}
 	private static final  Logger logger =LoggerFactory.getLogger(ProductDAOImpl.class);    
+	
 	@RequestMapping(value="/AddProducts", method = RequestMethod.POST)
 	public String AddPost( @ModelAttribute("product")  @Validated Product p, BindingResult result, 
 			@RequestParam("image") MultipartFile image, Model model) 

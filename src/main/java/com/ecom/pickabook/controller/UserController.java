@@ -4,6 +4,7 @@ import java.security.Principal;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -71,13 +72,14 @@ public class UserController {
 		 
 		 }
 		 @RequestMapping(value = "/welcome", method = RequestMethod.GET)
-		    public String printWelcome(ModelMap model, Principal principal, UserRoles ur) 
+		    public String printWelcome(ModelMap model, Principal principal, UserRoles ur,HttpSession session) 
 		 	{
 			 String name = principal.getName(); //get logged in username
-			 String role = ur.getAuthority();
+			/* String role = ur.getAuthority();
 			 System.out.println(role);
 		      model.addAttribute("Role ", role);
-		      model.addAttribute("username", name);
+		      model.addAttribute("username", name);*/
+			 session.setAttribute("username", name);
 			  return "Home";
 		    }	
 		 }

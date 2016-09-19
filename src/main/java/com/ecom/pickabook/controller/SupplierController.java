@@ -26,18 +26,6 @@ public class SupplierController {
 
 	@Autowired
 	SupplierServices supplierServices;
-	
-/*	@RequestMapping(value="/AllSuppliers", method=RequestMethod.GET )
-	public String AllSup()
-	{
-		return "AllSuppliers";
-	}
-	@RequestMapping(value="sdata", method=RequestMethod.GET )
-	public @ResponseBody List<Supplier> SData()
-	{		
-		System.out.println(supplierServices.listSupplier());
-		return supplierServices.listSupplier();
-	}*/
 
 	@RequestMapping(value="/AllSuppliers")
 	public ModelAndView AllGetSup() 

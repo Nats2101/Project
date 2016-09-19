@@ -6,8 +6,20 @@
 <title>Insert title here</title>
       <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="<c:url value='/resource/js/angular/Pcontroller.js'/>"></script>
 
+<style type="text/css">
+.welcome
+{
+	background-color:#292c2f;
+	font: normal 25px 'Neucha', cursive;
+	color:white;
+	width:100%;
+	text-align:right;
+}
 
+</style>
 </head>
 <body>
 
@@ -53,7 +65,9 @@
 	</sec:authorize>
   
     </div>
-    
+      <div class="welcome">
+   Welcome to Pick-A-Book ${username}!
+      </div>
   </div>
   
  

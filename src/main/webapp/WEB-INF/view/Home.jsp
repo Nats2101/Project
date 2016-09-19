@@ -14,12 +14,14 @@
   <link rel="stylesheet" href="resource/css/footer-distributed-with-contact-form.css">
     <link rel="stylesheet" type="text/css" href="resource/fonts/font-awesome-4.2.0/css/font-awesome.min.css"/>
   <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+  
+ 
   <style>
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
-    	  		   width: 50%;
-      margin: auto;
-      padding: auto;
+    	  		   width: 75%;
+      margin-top: 150px;
+      padding-left:200px;
 	  position:relative;
 	  }
 	  
@@ -48,17 +50,6 @@ a
 {
 	font: normal 20px 'Neucha', cursive;
 }
-.welcome
-{
-	background-color:#292c2f;
-	font: normal 25px 'Neucha', cursive;
-	color:white;
-	width:100%;
-	padding-top:150px;
-	height:180px;
-	float:center;
-}
-
   </style>
 </head>
 <body>
@@ -66,11 +57,7 @@ a
 <%@ include file = "Header.jsp"%>
 </div>
 
-  <div class="welcome">
-   Welcome to Pick-A-Book, ${Role} ${username}!
-      </div>
 <div class="container">
-  <br>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">

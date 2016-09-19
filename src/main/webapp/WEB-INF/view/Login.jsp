@@ -20,34 +20,24 @@
  
  <style>
 .error {
-	padding: 15px;
-	margin-bottom: 20px;
+	margin-top: 50px;
+	padding: 10px;
 	border: 1px solid transparent;
-	border-radius: 4px;
+	border-radius: 15px;
 	color: #a94442;
 	background-color: #f2dede;
 	border-color: #ebccd1;
 }
 
 .msg {
-	padding: 15px;
-	margin-bottom: 20px;
+	margin-top: 50px;
+	padding: 10px;
 	border: 1px solid transparent;
-	border-radius: 4px;
+	border-radius: 15px;
 	color: #31708f;
 	background-color: #d9edf7;
 	border-color: #bce8f1;
 }
-
-/* #login-box {
-	width: 300px;
-	padding: 20px;
-	margin: 100px auto;
-	background: #fff;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border: 1px solid #000;
-} */
 
 #login-box
 {
@@ -61,7 +51,7 @@
 }
 h3
 {
-	padding-top: 20px;
+	padding-top: 30px;
 	 font: bold;
   font-size:35px;
 	font-family:Bradley Hand ITC;
@@ -77,14 +67,15 @@ h3
 </div>
 
 <div id="login-box">
+
+		
+<h3>Log in!<span class="glyphicon glyphicon-user"></span></h3>
 <c:if test="${not empty error}">
 			<div class="error">${error}</div>
 		</c:if>
 		<c:if test="${not empty msg}">
 			<div class="msg">${msg}</div>
 		</c:if>
-		
-<h3>Log in!<span class="glyphicon glyphicon-user"></span></h3>
 		<form name='form' modelAttribute="login" action="<c:url value='j_spring_security_check' />" method='POST'>
 		  <div class="form-group">
 		 <label for="Uname"></label>

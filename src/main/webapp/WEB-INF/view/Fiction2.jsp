@@ -14,13 +14,7 @@
   <link rel="stylesheet" href="resource/css/footer-distributed-with-contact-form.css">
     <link rel="stylesheet" type="text/css" href="resource/fonts/font-awesome-4.2.0/css/font-awesome.min.css"/>
   <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<script src="<c:url value='/resource/js/angular/Pcontroller.js'/>"></script>
-<style type="text/css">
-
-</style>
 </head>
 <body>
 
@@ -28,28 +22,26 @@
 <%@ include file = "Header.jsp"%>
 </div>
 
-<div class="container text-center" ng-app="myApp" ng-controller="myCtrl">
+<div class="container text-center">
   <h2>FICTION</h2>
   
  <div class="container">
   
-  <div class="col-sm-3" ng-repeat="product in Data|filter:{category:'Fiction'}|filter:search" >
-  		<!-- <div class="col"> -->
-        <a href="F1B1.jsp"><img src="<c:url value='/resource/image/{{product.name}}.jpg'/>" alt="Random Name"></a>
-	    <!-- <p><strong><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo{{product.id}}">View</button></strong></p><br>
-			<div id="demo{{product.id}}" class="collapse"> -->
-				<p><b>{{product.name}}</b></p>
-				<p><i>{{product.description}}</i></p>
-				<p>Rs.{{product.price}}</p>
+  <div class="row">
+  		<div class="col-sm-3">
+        <a href="F1B1.jsp"><img src="resource/images/v.jpg" alt="Random Name"></a>
+	    <p><strong><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo1">View</button>
+			<div id="demo1" class="collapse"></strong></p><br>
+				<p>Angels and Demons</p>
+				<p>Dan Brown</p>
+				<p>Rs 500</p>
 				<button type="button" class="btn btn-default btn-sm">
 				<span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
-				<!-- </button> -->
-			<!-- </div> -->
+				</button>
+				</div>
 		</div>
-		</div>
-		</div>
-		</div>
-	<!-- 	<div class="col-sm-3">
+		
+		<div class="col-sm-3">
         <img src="resource/images/w.jpg" alt="Random Name">
 	    <p><strong><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo2">View</button>
 			<div id="demo2" class="collapse"></strong></p><br>
@@ -252,8 +244,9 @@
 			</div>
 		</div>
   </div>
- -->
 
+</div>
+</div>
 
 	<div>
 <%@ include file = "Footer.jsp"%>

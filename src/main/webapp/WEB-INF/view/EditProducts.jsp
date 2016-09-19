@@ -39,61 +39,70 @@
 
 <h2>UPDATE PRODUCTS</h2>
 
-		<form:form action="EditProducts" modelAttribute="product" method="POST" role="form">			
+		<form:form action="EditProducts" modelAttribute="product" method="POST" role="form" enctype="multipart/form-data">			
 		<form:input style="visibility:hidden;" path="id" />
 			<div class="form-group">
 				<form:label path="name">
 					<spring:message text="Product Name" />
 				</form:label>
 				<form:input class="form-control" path="name" />
-				<p class="errStyle">Product Name should be atleast 3 characters!
-					<form:errors path="name"></form:errors>
-				</p>
-			</div>
-
+				<form:errors path="name">
+					<p class="errStyle">Product Name should be atleast 3 characters!</p>
+				</form:errors>
+				</div>
 			<div class="form-group">
 				<form:label path="description">
-					<spring:message text="Description" />
+					<spring:message text="Product description" />
 				</form:label>
 				<form:input class="form-control" path="description" />
-				<p class="errStyle">Product description should be atleast 3 characters!
-					<form:errors path="description"></form:errors>
-				</p>
+				<form:errors path="description">
+					<p class="errStyle">Product description should be atleast 3 characters!</p>
+				</form:errors>
 			</div>
-<div class="form-group">
+			<div class="form-group">
 				<form:label path="category">
-					<spring:message text="Category" />
+					<spring:message text="Product category" />
 				</form:label>
-				<form:input class="form-control" path="category" />
-			
-			<p class="errStyle">Product category should be atleast 3 characters!
-				<form:errors path="name"></form:errors>
-			</p>
+				<form:select class="form-control" path="category" >
+<form:option value="Fiction">Fiction</form:option>
+<form:option value="Nonfiction">Nonfiction</form:option>
+<form:option value="Comics">Comics</form:option>
+<form:option value="Childrens">Childrens</form:option>
+</form:select>
+				<form:errors path="category">
+					<p class="errStyle">Select a product category</p>
+				</form:errors>
 			</div>
 			<div class="form-group">
 				<form:label path="price">
-					<spring:message text="Product Price" />
+					<spring:message text="Product price" />
 				</form:label>
 				<form:input class="form-control" path="price" />
-			<p class="errStyle"> Product price should be above 10
-				<form:errors path="name"></form:errors>
-			</p>
+				<form:errors path="price">
+					<p class="errStyle"> Product price should be atleast 10</p>
+				</form:errors>
 			</div>
 			<div class="form-group">
 				<form:label path="quantity">
-					<spring:message text="Quantity Available" />
+					<spring:message text="Product quantity" />
 				</form:label>
 				<form:input class="form-control" path="quantity" />
-				<p class="errStyle"> Product quantity should be atleast 1
-					<form:errors path="name"></form:errors>
-				</p>
+				<form:errors path="quantity">
+					<p class="errStyle">Product quantity should be atleast 1</p>
+				</form:errors>
 			</div>
-			
+			<div class="form-group">
+				<form:label path="image">
+					<spring:message text="Product Image" />
+				</form:label>
+				<form:input class="form-control" type="file" path="image" multiple="multiple"/>
+			</div>
 			<div class="form-group">
 				<input class="btn btn-info" type="submit"
 					value="<spring:message text="Update Product"/>" />
-			</div>
 
+
+			</div>
 		</form:form>
 	</div>
 <div>

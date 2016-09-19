@@ -63,9 +63,14 @@
 				<form:label path="category">
 					<spring:message text="Product category" />
 				</form:label>
-				<form:input class="form-control" path="category" />
+				<form:select class="form-control" path="category" >
+<form:option value="Fiction">Fiction</form:option>
+<form:option value="Nonfiction">Nonfiction</form:option>
+<form:option value="Comics">Comics</form:option>
+<form:option value="Childrens">Childrens</form:option>
+</form:select>
 				<form:errors path="category">
-					<p class="errStyle">Product category should be atleast 3 characters</p>
+					<p class="errStyle">Select a product category</p>
 				</form:errors>
 			</div>
 			<div class="form-group">
@@ -81,7 +86,7 @@
 				<form:label path="quantity">
 					<spring:message text="Product quantity" />
 				</form:label>
-				<form:input class="form-control" path="quantity" />
+				<form:input class="form-control" path="quantity" type="number" value="1"/>
 				<form:errors path="quantity">
 					<p class="errStyle">Product quantity should be atleast 1</p>
 				</form:errors>

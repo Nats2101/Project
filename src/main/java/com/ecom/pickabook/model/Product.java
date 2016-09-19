@@ -33,8 +33,8 @@ public class Product {
 	@Column
 	@NotBlank
 	private String description;  
-	
-	@Column @Min(3)
+
+	@Column
 	private String category;  
 	
 	@Column @Min(10)
