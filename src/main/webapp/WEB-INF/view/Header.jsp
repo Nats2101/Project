@@ -42,28 +42,50 @@
 	  <li><a href="${pageContext.request.contextPath}/Nonfiction">Non-Fiction</a></li>
 	  <li><a href="${pageContext.request.contextPath}/Comic">Comics</a></li>
 	  <li><a href="${pageContext.request.contextPath}/Children">Children's</a></li>
-	  <sec:authorize access="hasRole('ROLE_ADMIN')">
-      <li><a href="${pageContext.request.contextPath}/AddProducts">Add Products</a></li>
-       </sec:authorize>
-      <li><a href="${pageContext.request.contextPath}/AllProducts?id=0">View All</a></li>
-       <sec:authorize access="hasRole('ROLE_ADMIN')">
-        <li><a href="${pageContext.request.contextPath}/AddCategory">Add Category</a></li>
-      <li><a href="${pageContext.request.contextPath}/AllCategory?cid=0">View AllCats</a></li>
-      
-      <li><a href="${pageContext.request.contextPath}/AddSupplier">Add Supplier</a></li>
-      <li><a href="${pageContext.request.contextPath}/AllSuppliers?id=0">View AllSupps</a></li>
+	
+      <sec:authorize access="hasRole('ROLE_USER')">
+       <li><a href="${pageContext.request.contextPath}/AllProducts?id=0">View All</a></li>
       </sec:authorize>
+      <sec:authorize access="hasRole('ROLE_ADMIN')">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Products
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="${pageContext.request.contextPath}/AddProducts">Add Products</a></li>
+          <li><a href="${pageContext.request.contextPath}/AllProducts?id=0">View Products</a></li>
+          </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="${pageContext.request.contextPath}/AddCategory">Add category</a></li>
+          <li><a href="${pageContext.request.contextPath}/AllCategory?cid=0">All categories</a></li>
+          </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Suppliers
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="${pageContext.request.contextPath}/AddSupplier">Add Supplier</a></li>
+          <li><a href="${pageContext.request.contextPath}/AllSuppliers?id=0">All Suppliers</a></li>
+          </ul>
+      </li>
+      </sec:authorize>
+      
 		<li><a href="${pageContext.request.contextPath}/Aboutus">About Us</a></li>
         				
        <sec:authorize access="isAnonymous()">		 
         <li><a href="${pageContext.request.contextPath}/Register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li><a href="${pageContext.request.contextPath}/Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </sec:authorize>
-      
-      <li><sec:authorize access="isAuthenticated()">
-		<li><a href='<c:url value="/logout" />'><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      <sec:authorize access="hasRole('ROLE_USER')">
+       <li><a href="${pageContext.request.contextPath}/user/viewcart"><span class="glyphicon glyphicon-shopping-cart"></span> MyCart</a></li>
+      </sec:authorize>
+      <sec:authorize access="isAuthenticated()">
+    		<li><a href='<c:url value="/logout" />'><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 	</sec:authorize>
-  
+  </ul>
     </div>
       <div class="welcome">
    Welcome to Pick-A-Book ${username}!

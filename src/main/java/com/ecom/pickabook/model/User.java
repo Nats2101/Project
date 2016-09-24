@@ -1,22 +1,29 @@
 package com.ecom.pickabook.model;
 
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotEmpty;
+
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table
-public class User {
-	
+public class User implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	private  boolean enabled=true;
 	@Id
 	@Column
@@ -45,6 +52,16 @@ public class User {
 	@Column
 	@Size(min=4, message="Min 4 alphanumeric characters")
 	private String password;
+	
+/*	 @OneToOne
+	    @JoinColumn(name = "shippingAddressId")
+	    private ShippingAddress shippingAddress;*/
+/*
+	    @OneToOne
+	    @JoinColumn(name = "cartId")
+	    @JsonIgnore
+	    private Cart cart;*/
+	
 	public int getId() {
 		return id;
 	}
@@ -72,6 +89,12 @@ public class User {
 	public String getContact() {
 		return contact;
 	}
+/*	public Cart getCart() {
+		return cart;
+	}
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}*/
 	public void setContact(String contact) {
 		this.contact = contact;
 	}

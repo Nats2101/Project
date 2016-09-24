@@ -1,5 +1,9 @@
 package com.ecom.pickabook.dao;
 
+import java.util.List;
+
+import javax.persistence.Query;
+
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -33,8 +37,34 @@ public class UserDAOImpl implements UserDAO{
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			return false;
-			
-			
-}
+		}
 	}
+
+	@Transactional
+	public User get(String id) {
+		return sessionFactory.getCurrentSession().get(User.class, id);
+
+	}
+
+	@Transactional
+	public List<User> listUser() {
+		String hql = "from User";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		List<User> listOfUsers = query.getResultList();
+		return listOfUsers;
+	}
+
+	@Transactional
+	public User getUserByUserName(String Uname) {
+		String hql = "from User where userName=" + "'" + Uname + "'";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		List<User> listOfUsers = query.getResultList();
+		if (listOfUsers != null && !listOfUsers.isEmpty()){
+			return  listOfUsers.get(0);
+		}
+	return null;
+
+	}
+
+
 }

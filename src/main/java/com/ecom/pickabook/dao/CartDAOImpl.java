@@ -10,15 +10,28 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ecom.pickabook.model.Cart;
-import com.ecom.pickabook.model.Product;
+
 
 @Repository
 public class CartDAOImpl implements CartDAO{
 
 	@Autowired
-	SessionFactory mySessionFactory;
+	private SessionFactory sessionFactory;
+	public CartDAOImpl(SessionFactory sessionFactory)
+	{
+		this.sessionFactory = sessionFactory;
+	}
 	@Transactional
-	public void addToCart(Cart cart) {
+	public boolean addToCart(Cart cart) {
+		
+		try {
+			sessionFactory.getCurrentSession().save(cart);
+			return true;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return false;
+		}
+		/*
 		Session session = mySessionFactory.openSession();
 		int productId = cart.getProductId();
 		Product product = (Product)session.get(Product.class, productId);
@@ -27,12 +40,12 @@ public class CartDAOImpl implements CartDAO{
 		cart.setProductName(product.getName());
 		session.saveOrUpdate(cart);
 		System.out.println("Item is being added to the cart");
-		
+		*/
 	}
 	
 	@Transactional
 	public List<Cart> getCart() {
-		Session session = mySessionFactory.openSession();
+		Session session = sessionFactory.openSession();
 		Criteria criteria=session.createCriteria(Cart.class);
 		List<Cart> cartList = criteria.list();
 		session.close();
@@ -40,7 +53,7 @@ public class CartDAOImpl implements CartDAO{
 		
 	}
 	
-	
+	/*
 	@Transactional
 	public void delete(int id) {
 		System.out.println("Delete Cart Item");
@@ -87,6 +100,6 @@ public class CartDAOImpl implements CartDAO{
 		return "success";
 	}
 
-	
+*/	
 	
 }

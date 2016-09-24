@@ -6,6 +6,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+       <link href="http://fonts.googleapis.com/css?family=Neucha" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -23,9 +24,9 @@
 <script src="<c:url value='/resource/js/angular/Ccontroller.js'/>"></script>
 <style type="text/css">
 .errStyle {
-	color: red;
-	font: normal 20px ;
-	text-shadow: maroon;
+	color: orange;
+	font: normal 20px 'Neucha';
+	text-shadow: white;
 }
 </style>
 </head>

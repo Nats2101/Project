@@ -27,7 +27,7 @@ import com.ecom.pickabook.util.FileUtil;
 @Controller 
 public class ViewController {
 	
-	private String path = "C:\\ANIIT\\Workspace1\\PickABook\\src\\main\\webapp\\resource\\image\\"; 
+	private String path = "C:\\ANIIT\\Workspace4\\PickABook\\src\\main\\webapp\\resource\\image\\"; 
 	
 	
 	@RequestMapping(value="/", method = RequestMethod.GET)
@@ -108,6 +108,7 @@ public class ViewController {
 	{ 
 		return "details";
 	}
+	
 	@RequestMapping(value="/EditProducts", method = RequestMethod.GET)
 	public ModelAndView EditGet(@RequestParam("id") int id) 
 	{ 
@@ -124,7 +125,7 @@ public class ViewController {
 		}
 		else {
 		productServices.update(p); 
-		return "Home";
+		return "AllProducts";
 		}
 	}
 	
@@ -137,7 +138,7 @@ public class ViewController {
 	public String  DeleteActionPage(@RequestParam("id") int id)
 	{
 		productServices.delete(id);
-		return "Home";
+		return "AllProducts";
 	}
 	
 	

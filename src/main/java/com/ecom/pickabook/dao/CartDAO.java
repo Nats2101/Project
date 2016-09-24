@@ -6,8 +6,8 @@ import com.ecom.pickabook.model.Cart;
 
 public interface CartDAO {
 	
-	public void addToCart(Cart cart);
+	public boolean addToCart(Cart cart);
 	public List<Cart> getCart();
-	public void delete(int id);
-	public Cart findById(int cartId);
+	/*public void delete(int id);
+	public Cart findById(int cartId);*/
 }

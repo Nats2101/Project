@@ -26,24 +26,6 @@ public class CategoryController {
 	@Autowired
 	CategoryServices categoryServices;
 	
-	/*
-	
-	/*@RequestMapping(value="/cdata", method=RequestMethod.GET )
-	public @ResponseBody List<Category> CData()
-	{		
-		System.out.println(categoryServices.listCategory());
-		return categoryServices.listCategory();
-	}
-	
-	@RequestMapping(value="/AllCategory", method=RequestMethod.GET )
-	public ModelAndView AllGetCat() 
-	{ 
-		List<Category> list = categoryServices.listCategory();
-		ModelAndView model = new ModelAndView("AllCategory");
-		model.addObject("category", list);
-		return model;
-	}*/
-	
 	@RequestMapping(value="/AllCategory")
 	public ModelAndView AllGetCat() 
 	{

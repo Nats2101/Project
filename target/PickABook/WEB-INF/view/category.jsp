@@ -6,6 +6,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Neucha" rel="stylesheet" type="text/css">
 <title>Welcome</title>
 <style>
 .under
@@ -50,20 +51,25 @@ p
 <img class="under" class="img-responsive" src="resource/images/wood1.jpg" width="100%" height="1140px">
  <div class="container">
  <div class="row">
+ <p>Check out list of products in each category...</p>
   		<div class="col-sm-3">
-       <a href="Fiction"><p>Fiction<p><img class="img-responsive" src="resource/images/v.jpg" alt="Random Name"></a>	
+  		  <a href="AllProducts?id=1"><img class="img-responsive" src="resource/images/v.jpg" alt="Random Name"></a>	
+		<p>Fiction<p>
 		</div>
 		
 		<div class="col-sm-3">
-         <a href="Nonfiction"><p>Non Fiction<p><img class="img-responsive" src="resource/images/nf2.jpg" alt="Random Name"></a>	
+		<a href="AllProducts?id=2"><img class="img-responsive" src="resource/images/nf2.jpg" alt="Random Name"></a>	
+	   	<p>Non Fiction<p>
 	   	</div>
 		
 		<div class="col-sm-3">
-         <a href="Comic"><p>Comics<p><img class="img-responsive" src="resource/images/c1.jpg" alt="Random Name"></a>	
+         <a href="AllProducts?id=3"><img class="img-responsive" src="resource/images/c1.jpg" alt="Random Name"></a>	
+		<p>Comics<p>
 		</div>
 		
 		<div class="col-sm-3">
-         <a href="Children"><p>Childrens<p><img class="img-responsive" src="resource/images/ch1.jpg" alt="Random Name"></a>	
+         <a href="AllProducts?id=4"><img class="img-responsive" src="resource/images/ch1.jpg" alt="Random Name"></a>	
+		<p>Childrens<p>
 		</div>
   </div>
 </div>

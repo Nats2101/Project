@@ -6,6 +6,8 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+       <link href="http://fonts.googleapis.com/css?family=Neucha" rel="stylesheet" type="text/css">
+       
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -38,13 +40,13 @@
 <div class="col-sm-6">
 <form action="DeleteProducts" method="post" role="form">
 <input type="text" name="id" value="${param.id}" style="visibility:hidden;">
-<input type="submit" value="Confirm Delete" class="btn btn-info" />
+<input type="submit" value="Confirm Delete" class="btn btn-danger" />
  </form>
  </div>
  
 <div class="col-sm-6">
 <form action="AllProducts" method="get" role="form">
-<input type="submit" value="Cancel" class="btn btn-info" />
+<input type="submit" value="Cancel" class="btn btn-warning" />
 </form>
  </div>
  </div>

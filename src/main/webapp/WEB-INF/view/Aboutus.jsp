@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
   <title>About Us</title>
-<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+     <link href="http://fonts.googleapis.com/css?family=Neucha" rel="stylesheet" type="text/css">
+     <link href="http://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   
   <link rel="stylesheet" href="resource/css/footer-distributed-with-contact-form.css">
-     <link rel="stylesheet" type="text/css" href="resource/fonts/font-awesome-4.2.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="resource/fonts/font-awesome-4.2.0/css/font-awesome.min.css"/>
   <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
-    
 </head>
 
   <style>
@@ -55,29 +55,25 @@ p.speech:after {
   border: 15px solid;
   border-color: #fff transparent transparent #fff;
 }
-p.head
-{
-font-size:45px;
-	padding-left:0px;
-	margin:0px;
-}
+
 .navbar-brand
 {
-height:50px;
+height:52px;
 font: normal 35px 'Cookie', cursive;
 color:white;
-border-radius:20px;
-}
+border-radius:0px;
+
+}	  
 #myNavbar
 {
 padding-top:80px;
 background-color:#292c2f;
+width:100%;
 }
 a
 {
-	font: normal 25px 'Cookie', cursive;
+	font: normal 20px 'Neucha', cursive;
 }
-
   </style>
 
 

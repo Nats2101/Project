@@ -19,7 +19,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@page isELIgnored="false"%>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="<c:url value='/resource/js/angular/Pcontroller.js'/>"></script>
 <style type="text/css">
@@ -94,6 +94,7 @@ li
 <div class="container text-center" ng-app="myApp" ng-controller="myCtrl">
 
 <div ng-repeat="product in Data | filter: { id: '${param.id}'}" >
+
 <div class=col-lg-5>
 <center>
 <img src="<c:url value='/resource/image/{{product.name}}.jpg'/>" />
@@ -122,15 +123,25 @@ li
 
 </table>
 </div>
-		 <sec:authorize access="hasRole('ROLE_USER')">
-<a href="flow/Cart" >  
+<%-- 	<sec:authorize access="hasRole('ROLE_USER')">
+<form:form method="POST" action="${pageContext.request.contextPath}/user/addtocart/{{product.id}}" modelAttribute="cart">
+			
+			<input type="hidden" value="{{product.id}}" />
+			<span class="h5"> <label>Quantity : </label><form:input path="quantity" class="form-control"
+					type="number" style="width:15%" min="1" max="1000" />
+			</span>
+			<input type="submit" class="btn btn-info btn-lg" value="Add to Cart" />
+</form:form>
+</sec:authorize> --%>
+ <sec:authorize access="hasRole('ROLE_USER')">
+<a href="${pageContext.request.contextPath}/user/addtocart?productId={{product.id}}" >  
 <button type="button" class="btn btn-info btn-lg">
 <span class="glyphicon glyphicon-shopping-cart"></span> 
 ADD to CART
 </button>
 </a>
-			</sec:authorize>
-       <sec:authorize access="isAnonymous()">	
+</sec:authorize>
+<sec:authorize access="isAnonymous()">	
       <h5> You have to 
       <button type="button" class="btn btn-info btn-md">
       <a href="${pageContext.request.contextPath}/Login"><span class="glyphicon glyphicon-log-in"></span> Login</a>
@@ -141,6 +152,7 @@ ADD to CART
       to add to your cart 
      </h5> 
 </sec:authorize>
+
 </div>
 </div>
 

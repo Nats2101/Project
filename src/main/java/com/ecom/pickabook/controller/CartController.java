@@ -4,11 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -19,20 +16,18 @@ public class CartController {
 	@Autowired
 	CartDAO cartDAO;
 	
-	@RequestMapping(value="/flow/Cart", method = RequestMethod.GET)
-	 public ModelAndView Cartpage() 
-		{ 
-		return new ModelAndView("/flow/Cart");
-		}
-	@RequestMapping(value="addtocart",method=RequestMethod.POST)
-	public ModelAndView addToCart(@ModelAttribute("cart")Cart cart, @RequestParam("productId")int productId, @RequestParam("quantity")int quantity)
+
+	@RequestMapping(value="/user/addtocart")
+	public ModelAndView addToCart(@ModelAttribute("cart")Cart cart, @RequestParam("productId")int productId)
 	{
 		System.out.println("Adding to cart");
-		cart.setProductId(productId);
+		//cart.setProductId(productId);, @RequestParam("quantity")int quantity
 		
+		
+		cart.getProduct().setId(productId);
  		cartDAO.addToCart(cart);
  	 	List cartList = cartDAO.getCart();
-		ModelAndView model = new ModelAndView("/view/flow/Cart");
+		ModelAndView model = new ModelAndView("/flow/Cart");
  		model.addObject("cartList",cartList);
 		model.addObject("cartId",cart.getCartId());
 		return model;
@@ -42,12 +37,12 @@ public class CartController {
 	public ModelAndView viewCart(@ModelAttribute Cart cart)
 	{
 		List cartList = cartDAO.getCart();
-		ModelAndView model = new ModelAndView("/flow/cart");
+		ModelAndView model = new ModelAndView("/flow/Cart");
  		model.addObject("cartList",cartList);
 		model.addObject("cartId",cart.getCartId());
 		return model;
 	}
-	
+	/*
 	@RequestMapping(value={"/collectbillinginfo","/user/collectbillinginfo"})
 	public String collectBilling(@RequestParam("cartId") int cartId, @ModelAttribute("cart") Cart cart)
 	{
@@ -63,5 +58,5 @@ public class CartController {
 		System.out.println("Deleting Cart......");
 		cartDAO.delete(id);
 		return "redirect:/user/viewcart";
-	}
+	}*/
 }

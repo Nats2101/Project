@@ -6,6 +6,8 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+       <link href="http://fonts.googleapis.com/css?family=Neucha" rel="stylesheet" type="text/css">
+       
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -18,6 +20,14 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<style type="text/css">
+.errStyle {
+	color: orange;
+	font: normal 20px 'Neucha';
+	text-shadow: white;
+}
+</style>
 
 </head>
 <body>
@@ -36,12 +46,15 @@
 					<spring:message text="Supplier Name" />
 				</form:label>
 				<form:input class="form-control" path="name" />
+				<p class="errStyle"> <form:errors path="name"></form:errors></p>
+				
 			</div>
 			<div class="form-group">
 				<form:label path="address">
 					<spring:message text="Address" />
 				</form:label>
 				<form:input class="form-control" path="address" />
+				<p class="errStyle"> <form:errors path="address"></form:errors></p>
 			</div>
 
 			<div class="form-group">

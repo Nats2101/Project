@@ -27,6 +27,11 @@ tr.td
 {
 	font: normal 25px 'Neucha', cursive;
 }
+.row
+{
+	position:fixed;
+	z-index: 1;
+}
 </style>
 </head>
 <body>
@@ -52,7 +57,7 @@ tr.td
             </div>
         </div>	
 	</div>
-  <br>
+  <br><br><br>
 <fieldset>
   <c:set var="pid" value="${param.id}"></c:set>
   

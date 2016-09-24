@@ -6,6 +6,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+       <link href="http://fonts.googleapis.com/css?family=Neucha" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -24,8 +25,8 @@
 
 <style>
 .errStyle {
-	color: red;
-	font: normal 20px 'Cookie', cursive;
+	color: maroon;
+	font: normal 20px 'Neucha', cursive;
 }
 </style>
 
@@ -46,7 +47,7 @@
 				</form:label>
 				<form:input class="form-control" path="name" />
 				<form:errors path="name">
-					<p class="errStyle">* Product Name should be atleast 3 characters</p>
+					<p class="errStyle">Product Name should be atleast 3 characters!</p>
 				</form:errors>
 				</div>
 			<div class="form-group">
@@ -55,16 +56,21 @@
 				</form:label>
 				<form:input class="form-control" path="description" />
 				<form:errors path="description">
-					<p class="errStyle">* Product description should be atleast 3 characters</p>
+					<p class="errStyle">Product description should be atleast 3 characters!</p>
 				</form:errors>
 			</div>
 			<div class="form-group">
 				<form:label path="category">
 					<spring:message text="Product category" />
 				</form:label>
-				<form:input class="form-control" path="category" />
+				<form:select class="form-control" path="category" >
+<form:option value="Fiction">Fiction</form:option>
+<form:option value="Nonfiction">Nonfiction</form:option>
+<form:option value="Comics">Comics</form:option>
+<form:option value="Childrens">Childrens</form:option>
+</form:select>
 				<form:errors path="category">
-					<p class="errStyle">* Product category should be atleast 3 characters</p>
+					<p class="errStyle">Select a product category</p>
 				</form:errors>
 			</div>
 			<div class="form-group">
@@ -73,16 +79,16 @@
 				</form:label>
 				<form:input class="form-control" path="price" />
 				<form:errors path="price">
-					<p class="errStyle">* Product price should be atleast 1</p>
+					<p class="errStyle"> Product price should be atleast 10</p>
 				</form:errors>
 			</div>
 			<div class="form-group">
 				<form:label path="quantity">
 					<spring:message text="Product quantity" />
 				</form:label>
-				<form:input class="form-control" path="quantity" />
+				<form:input class="form-control" path="quantity" type="number" value="1"/>
 				<form:errors path="quantity">
-					<p class="errStyle">* Product quantity should be atleast 1</p>
+					<p class="errStyle">Product quantity should be atleast 1</p>
 				</form:errors>
 			</div>
 			<div class="form-group">

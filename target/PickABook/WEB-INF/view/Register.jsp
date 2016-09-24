@@ -6,6 +6,7 @@
  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Neucha" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -45,59 +46,51 @@ h3
 
 <form:form action="Register" modelAttribute="register" role="form" method="POST">
 			<div class="form-group">
-				<form:label path="fname">
-					
-				</form:label>
+				<form:label path="fname"></form:label>
 				<form:input class="form-control" path="fname" type="text" placeholder="John" />
+				<p class="errStyle"> <form:errors path="fname"></form:errors></p>
 			</div>
 			
 			<div class="form-group">
-				<form:label path="lname">
-					
-				</form:label>
-				<form:input class="form-control" path="lname" type="text" placeholder="Doe" />
+				<form:label path="lname"></form:label>
+				<form:input class="form-control" path="lname" type="text" placeholder="Doe"/>
+			<p class="errStyle"> <form:errors path="lname"></form:errors></p>
 			</div>
 			
 			<div class="form-group">
-				<form:label path="bdate">
-					
-				</form:label>
+				<form:label path="bdate"></form:label>
 				<form:input class="form-control" path="bdate" type="date"/>
+				<p class="errStyle"> <form:errors path="bdate"></form:errors></p>
 			</div>
 			
 			<div class="form-group">
-				<form:label path="contact">
-					
-				</form:label>
-				<form:input class="form-control" path="contact" placeholder="Where do I contact you?" />
+				<form:label path="contact"></form:label>
+				<form:input class="form-control" path="contact" type="number"  placeholder="Where do I contact you?"/>
+				<p class="errStyle"> <form:errors path="contact"></form:errors></p>
 			</div>
 			
 			<div class="form-group">
-				<form:label path="address">
-					
-				</form:label>
+				<form:label path="address"></form:label>
 				<form:input class="form-control" path="address" type="text" placeholder="Where do I deliver the product to?" />
+			<p class="errStyle"> <form:errors path="address"></form:errors></p>
 			</div>
 			
 			<div class="form-group">
-				<form:label path="email">
-					
-				</form:label>
-				<form:input class="form-control" path="email" type="text" placeholder="johndoe@hotmail.com" />
+				<form:label path="email"></form:label>
+				<form:input class="form-control" path="email" type="email" placeholder="johndoe@hotmail.com" />
+			<p class="errStyle"> <form:errors path="email"></form:errors></p>
 			</div>
 			
 			<div class="form-group">
-				<form:label path="uname">
-					
-				</form:label>
+				<form:label path="uname"></form:label>
 				<form:input class="form-control" path="uname" type="text" placeholder="choose a cool username!" />
+			<p class="errStyle"> <form:errors path="uname"></form:errors></p>
 			</div>
 			
 			<div class="form-group">
-				<form:label path="password">
-					
-				</form:label>
-				<form:input class="form-control" path="password" type="password" placeholder="Min 4 alphanumeric characters" />
+				<form:label path="password"></form:label>
+				<form:input class="form-control" path="password" type="password" placeholder="you need to keep it safe from Hackers!" />
+			<p class="errStyle"> <form:errors path="password"></form:errors></p>
 			</div>
 			
 			<div class="form-group">
